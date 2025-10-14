@@ -1,6 +1,7 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy import text
 from scalar_fastapi import get_scalar_api_reference
 from App.Core.Config import settings
 from App.Core.Logger import logger
@@ -22,7 +23,7 @@ async def lifespan(app: FastAPI):
     logger.info("Проверка подключения к БД...")
     try:
         async with db_manager.session_scope() as session:
-            await session.execute("SELECT 1")
+            await session.execute(text("SELECT 1"))
         logger.info("✓ Подключение к БД установлено")
     except Exception as e:
         logger.error(f"✗ Ошибка подключения к БД: {e}")
