@@ -1,0 +1,25 @@
+# FastAPI
+fastapi==0.110.0
+uvicorn[standard]==0.27.1
+scalar-fastapi==1.0.3
+
+# Database
+sqlalchemy==2.0.27
+asyncpg==0.29.0
+alembic==1.13.1
+
+# Pydantic
+pydantic==2.6.1
+pydantic-settings==2.1.0
+email-validator==2.1.0
+
+# Security
+passlib[bcrypt]==1.7.4
+
+# Scheduler
+apscheduler==3.10.4
+pytz==2024.1
+
+# Logging
+python-json-logger==2.0.7
+
